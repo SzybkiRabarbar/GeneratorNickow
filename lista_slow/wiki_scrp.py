@@ -1,6 +1,6 @@
 import requests 
 
-def rlist():
+def rlist(): #*# Pobranie strony z wikipedii
 
     wikiraw = requests.get(link)
     wikitext = wikiraw.text
@@ -14,7 +14,7 @@ def rlist():
 
     return wikirawlist    
 
-def tlist(rawlist):
+def tlist(rawlist): #*# Przekształcenie strony w listę słów
 
     wikilist = []
     
@@ -35,7 +35,7 @@ def tlist(rawlist):
 
     return wikitruelist
 
-def zmianalinku():
+def zmianalinku(): #*# Przeskoczenie na następną stronę
     
     lin = str(rlist()).split('>następna strona')
     lind = len(lin)
@@ -51,16 +51,18 @@ def zmianalinku():
 
     return lin
 
-link = 'https://pl.wiktionary.org/w/index.php?title=Kategoria:J%C4%99zyk_polski_-_przymiotniki&from=A#mw-pages'
+if __name__=='__main__':
+    
+    link = 'https://pl.wiktionary.org/w/index.php?title=Kategoria:J%C4%99zyk_polski_-_przymiotniki&from=A#mw-pages'
 
-i = 1
-for i in range(20000):
-    for l in (tlist(rlist())):
-        print(l)
-    if len(tlist(rlist())) != 200:
-        break
-    else:
-        link = zmianalinku()
+    i = 1
+    for i in range(20000):
+        for l in (tlist(rlist())):
+            print(l)
+        if len(tlist(rlist())) != 200:
+            break
+        else:
+            link = zmianalinku()
 
         
         
