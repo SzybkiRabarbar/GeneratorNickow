@@ -1,6 +1,6 @@
 import requests 
 
-def rlist(): #*# Pobranie strony z wikipedii
+def rlist(): #<== Pobranie strony z wikipedii
 
     wikiraw = requests.get(link)
     wikitext = wikiraw.text
@@ -14,7 +14,7 @@ def rlist(): #*# Pobranie strony z wikipedii
 
     return wikirawlist    
 
-def tlist(rawlist): #*# Przekształcenie strony w listę słów
+def tlist(rawlist): #<== Przekształcenie strony w listę słów
 
     wikilist = []
     
@@ -35,7 +35,7 @@ def tlist(rawlist): #*# Przekształcenie strony w listę słów
 
     return wikitruelist
 
-def zmianalinku(): #*# Przeskoczenie na następną stronę
+def zmianalinku(): #<== Przeskoczenie na następną stronę
     
     lin = str(rlist()).split('>następna strona')
     lind = len(lin)

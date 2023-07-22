@@ -1,5 +1,4 @@
-#*# Program zmiennia przymiotniki męskoosowowe na żeńskoosobowe
-if __name__=='__main__': 
+if __name__=='__main__': #<== Program zmiennia przymiotniki męskoosowowe na żeńskoosobowe
     przymiotniki = open('przymiotniki-m.txt', 'r').read()
     przymiotniki = przymiotniki.splitlines()
 
