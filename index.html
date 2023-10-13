@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <style>
+        body {
+            background-color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation-name: fadeIn;
+            animation-duration: 6s;
+            height: 100vh;
+        }
+
+        .word-block {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+            padding: 50px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .word-block h1 {
+            font-size: 2.5em;
+            color: #333;
+        }
+    </style>
+</head>
+
 <body>
-
-<h2>Wygenerowany Nick:</h2>
-<p id="randomWords"></p>
-
-<script src="script.js"></script>
-
+    <div class="container">
+        <div class="word-block">
+            <h1 id="randomWords"></h1>
+            <script src="script.js"></script>
+        </div>
+    </div>
 </body>
 </html>
